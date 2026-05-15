@@ -44,8 +44,8 @@ const displayValue = computed(() => {
 const trend = computed(() => {
   const data = props.sparklineData
   if (!data || data.length < 2) return null
-  const first = data[0]
-  const last = data[data.length - 1]
+  const first = data[0]!
+  const last = data[data.length - 1]!
   if (first === 0) return null
   return ((last - first) / first) * 100
 })
